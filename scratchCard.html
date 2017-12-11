@@ -1,0 +1,99 @@
+﻿<!doctype html>
+<html style="font-size:20px;">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+    <title>刮刮卡</title>
+    <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <style>
+        html, body {
+            height: auto;
+            height: 100%;
+            position: static;
+            background:transparent;
+            background:rgba(0,0,0,.09);
+        }
+        .ggl{
+            background-image: url('ggl/ggl_bg.png');
+            background-size:cover;
+        }
+        .ggl-t {
+            width: 16.5rem;
+            height: 3.7rem;
+            margin:0 auto;
+            background-image: url('ggl/ggl_01.png');
+            background-size:cover;
+        }
+        .ggl-b {
+            width: 16.5rem;
+            height: 9.15rem;
+            margin:0 auto;
+            background-image: url('ggl/ggl_02.png');
+            background-size:cover;
+        }
+        .ggl-canv-box{
+            width:11.5rem;
+            height:4.2rem;
+            position:relative;
+            top:1.2rem;
+            left:2.6rem;
+        }
+        .ggl-prize{
+            width:11.5rem;
+            height:4.2rem;
+            display:-webkit-flex;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            position:absolute;
+            z-index: 1;
+        }
+        .prizename{
+            font-size:16px;
+            text-align:center;
+        }
+        .canvas{
+            width:11.5rem;
+            height:4.2rem;
+            position:absolute;
+            z-index: 1;
+        }
+        #prize{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <div class="ggl">
+        <div class="ggl-t">
+
+        </div>
+        <div class="ggl-b">
+            <div class="ggl-canv-box" id="canvBox">
+                <!--<div class="ggl-prize">
+                    <div class="prizename" id="prize">iPhone8一台</div>
+                </div>
+                <canvas id="c1" class="canvas"></canvas>-->
+            </div>
+        </div>
+    </div>
+
+    <script src="scratchCard.js"></script>
+    <script>
+        "use strict";
+        
+        /* 页面加载后开始初始化画布 */
+        $(function () {
+
+            //loadData();
+			var scratchCard = new ScratchCard('canvBox', '#cccccc', 'color', $('#canvBox').width(), $('#canvBox').height());
+			scratchCard.init('恭喜您获得：iphonex', 'text');
+
+        });
+
+        
+        
+    </script>
+
+</body>
+</html>
